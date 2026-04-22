@@ -1,0 +1,7 @@
+const mongoose = require('mongoose');
+
+const connectDB = async () => {
+    await mongoose.connect("mongodb://MohanReddy:Mohan123@ac-phkzxih-shard-00-00.jnsdxf6.mongodb.net:27017,ac-phkzxih-shard-00-01.jnsdxf6.mongodb.net:27017,ac-phkzxih-shard-00-02.jnsdxf6.mongodb.net:27017/devTinder?ssl=true&replicaSet=atlas-xrazmv-shard-0&authSource=admin&appName=DevTinder");
+};
+
+module.exports = connectDB;

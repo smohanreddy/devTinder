@@ -4,7 +4,7 @@ const User = require('../models/user');
 const userAuth = async (req, res, next) => {
      const token = req.cookies.token;
         if(!token) {
-            throw new Error("No token provided");
+            return res.status(401).send("Unauthorized: No token provided");
         }
         const decodedToken = await jwt.verify(token, "mohan@1808$03");
         const userID = decodedToken._id;

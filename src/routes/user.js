@@ -25,7 +25,6 @@ userRouter.get('/user/connections', userAuth, async(req, res) => {
             ]
         }).populate('fromUserId', 'firstName lastName').populate('toUserId', 'firstName lastName');
         const data = acceptedConnections.map(con => con.fromUserId._id.toString() === loggedInUserId.toString() ? con.toUserId : con.fromUserId );
-        console.log(data);
         res.json({message: "Accepted connections", data });
 
     }catch(err){
